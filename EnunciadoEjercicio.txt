@@ -8,3 +8,18 @@ Factura
 	idCliente
 
 Visualizar las faturas de un cliente determinado como parte del detalle del cliente
+
+----------------- Resolucion ----------------------
+
+1-Crear un proyecto de tipo MVC
+2-Añadir con Nuget EF para VB
+3-(Opcional) Si empleamos Unity, pues desde Nuget añadir Unity para MVC VB
+4a-Definir el modelo de clases ****
+4b-Definir el modelo de BD
+5-El contexto de EF (meto las entidades dentro EF)
+6-Generar el Scafolding
+7-Editar la vista Details
+
+----------------- Parte 2 ----------------------
+
+Aplicar IoC e Inyeccion de depedencias para desacoplar el controlador de EF
