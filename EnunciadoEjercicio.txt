@@ -1,0 +1,10 @@
+Cliente
+	id
+	nombre
+
+Factura
+	id 
+	titulo
+	idCliente
+
+Visualizar las faturas de un cliente determinado como parte del detalle del cliente
