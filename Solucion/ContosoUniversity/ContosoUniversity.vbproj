@@ -198,8 +198,11 @@
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\UnityConfig.vb" />
     <Compile Include="App_Start\UnityMVCActivator.vb" />
+    <Compile Include="Binders\CoursesModelBinder.vb" />
     <Compile Include="Controllers\CoursesController.vb" />
     <Compile Include="Controllers\EnrollmentsController.vb" />
+    <Compile Include="Controllers\StudentsController.vb" />
+    <Compile Include="Helpers\LabelExtension.vb" />
     <Compile Include="Persistence\EntityFrameworkCourseDao.vb" />
     <Compile Include="Persistence\ICourseDao.vb" />
     <Compile Include="SampleObject\IMessage.vb" />
@@ -264,6 +267,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Unity\Index.vbhtml" />
     <Content Include="Views\Courses\Create.vbhtml" />
     <Content Include="Views\Courses\Delete.vbhtml" />
@@ -275,6 +280,11 @@
     <Content Include="Views\Enrollments\Details.vbhtml" />
     <Content Include="Views\Enrollments\Edit.vbhtml" />
     <Content Include="Views\Enrollments\Index.vbhtml" />
+    <Content Include="Views\Students\Create.vbhtml" />
+    <Content Include="Views\Students\Delete.vbhtml" />
+    <Content Include="Views\Students\Details.vbhtml" />
+    <Content Include="Views\Students\Edit.vbhtml" />
+    <Content Include="Views\Students\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

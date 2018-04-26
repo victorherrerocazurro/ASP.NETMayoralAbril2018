@@ -15,8 +15,8 @@ End Code
         <div class="form-group">
             @Html.LabelFor(Function(model) model.Title, htmlAttributes:= New With { .class = "control-label col-md-2" })
             <div class="col-md-10">
-                <!--input name="Title" class="form-control" value="@Model.Title"/-->
-                @Html.EditorFor(Function(model) model.Title, New With { .htmlAttributes = New With { .class = "form-control" } })
+                
+                @Html.EditorFor(Function(model) model.Title, New With {.htmlAttributes = New With {.class = "form-control"}})
                 @Html.ValidationMessageFor(Function(model) model.Title, "", New With { .class = "text-danger" })
             </div>
         </div>

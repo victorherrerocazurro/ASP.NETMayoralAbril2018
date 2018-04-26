@@ -15,9 +15,10 @@ Namespace ContosoUniversity
 
         ' GET: Courses
         Function Index() As ActionResult
-            Return View(db.Courses.ToList())
+            Return PartialView(db.Courses.ToList())
         End Function
 
+        ' GET: Courses/Details?id=5
         ' GET: Courses/Details/5
         Function Details(ByVal id As Integer?) As ActionResult
             If IsNothing(id) Then
@@ -39,10 +40,14 @@ Namespace ContosoUniversity
         ' POST: Courses/Create
         'Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         'más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+
+        'Si por debajo no hay EF, y tenemos una consulta que contempla el CourseID, al no recibirlo, 
+        'nunca se establecera en la consulta
         <HttpPost()>
         <ValidateAntiForgeryToken()>
-        Function Create(<Bind(Include:="CourseID,Title,Credits")> ByVal course As Course) As ActionResult
+        Function Create(<Bind(Include:="Title,Credits")> ByVal course As Course) As ActionResult
             If ModelState.IsValid Then
+                'Petcicion http a un web api
                 db.Courses.Add(course)
                 db.SaveChanges()
                 Return RedirectToAction("Index")
@@ -67,7 +72,8 @@ Namespace ContosoUniversity
         'más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
         <ValidateAntiForgeryToken()>
-        Function Edit(<Bind(Include:="CourseID,Title,Credits")> ByVal course As Course) As ActionResult
+        Function Edit(<ModelBinder(GetType(CoursesModelBinder))> ByVal course As Course) As ActionResult
+            'Function Edit(<Bind(Include:="CourseID,Title,Credits")> ByVal course As Course) As ActionResult
             If ModelState.IsValid Then
                 db.Entry(course).State = EntityState.Modified
                 db.SaveChanges()

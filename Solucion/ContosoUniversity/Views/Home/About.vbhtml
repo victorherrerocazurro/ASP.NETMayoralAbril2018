@@ -1,5 +1,8 @@
 ﻿@Code
     ViewData("Title") = "About"
+
+    'Es posible pero no es recomendable
+    'Dim db As New SchoolContext
 End Code
 
 <h2>@ViewData("Title").</h2>

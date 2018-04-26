@@ -14,20 +14,20 @@ Public Module RouteConfig
         '3-En todas las rutas al final ya sea por las varibles de la propia ruta o por la asignacion de
         'defaults. deben quedar asignados los valores de controller y action
 
-        routes.MapRoute(
-            name:="Blog",
-            url:="Blog/Index", 'Asignacion de variables
-            defaults:=New With {.controller = "Blog", .action = "Index"}
-        )
+        'routes.MapRoute(
+        'name:="Blog",
+        'url:="Blog/Index", 'Asignacion de variables
+        'defaults:=New With {.controller = "Blog", .action = "Index"}
+        ')
 
         'Ruta particula para Blogs
         '/Blog/{cualquiera}/2018/04/25 -> Se ejecuta el metodo cualquiera del controlador BlogController
-        routes.MapRoute(
-            name:="Blog1",
-            url:="{controller}/{action}/{year}/{month}/{day}", 'Asignacion de variables
-            defaults:={},
-            constraints:=New With {.controller = "Blog", .action = "Desde", .year = "\d{4}", .month = "\d{2}", .day = "\d{2}"}
-        )
+        'routes.MapRoute(
+        'name:="Blog1",
+        'url:="{controller}/{action}/{year}/{month}/{day}", 'Asignacion de variables
+        'defaults:={},
+        'constraints:=New With {.controller = "Blog", .action = "Desde", .year = "\d{4}", .month = "\d{2}", .day = "\d{2}"}
+        ')
 
         'Esta ruta aunque sea valida, n es una buena ruta porque no es descriptiva de lo
         'que se va a producir en el servidor

@@ -11,11 +11,11 @@
 
     'Home/Index/12?nombre=Victor
 
-    Function Index(id As Integer, nombre As String) As ActionResult
+    Function Index() As ActionResult
 
         'Este New nos estorba prar tener las capas desacopladas, para poder desarrollar en paralelo
 
-        Dim listadoDeCursos As IEnumerable(Of Course) = _SchoolService.ListarCursos()
+        'Dim listadoDeCursos As IEnumerable(Of Course) = _SchoolService.ListarCursos()
 
         Return View()
     End Function
@@ -23,12 +23,12 @@
     Function About() As ActionResult
         ViewData("Message") = "Your application description page."
 
-        Return View()
+        Return PartialView()
     End Function
 
     Function Contact() As ActionResult
         ViewData("Message") = "Your contact page."
-
+        ViewData("Dato") = New Course
         Return View()
     End Function
 End Class
